@@ -29,29 +29,31 @@
 
    <h2 style="font-family: Times new roman, sans-serif; margin-left: 10px; margin-top: 7
      
+               <h2 style="font-family: Times new roman, sans-serif; margin-left: 10px; margin-top: 7
               0px;"><u>Introducción:</u></h2>
+
    <!-- Inserción de texto -->
-  <p style= "font-family: calibri, sans-serif; margin-left: 50px; margin-right: 50px; text-align: justify">
+  <p style= "font-family: calibri, sans-serif;font-size: 20px; margin-left: 50px; margin-right: 50px; text-align: justify">
     El presente trabajo corresponde al modulo de Visualizacion de información de la  certificación Data Science del ITBA. En el mismo intentamos realizar un análisis
     y visualización de un conjunto de datos recogidos del sitio 
     <a href="https://insideairbnb.com/">insideairbnb.com</a>
  
     que contiene información del sitio oficial 
     de Airbnb con algún grado previo de análisis y depuración.  </p>
-  <p style= "font-family: calibri, sans-serif; margin-left: 50px; margin-right: 50px;">
+  <p style= "font-family: calibri, sans-serif; font-size: 20px;margin-left: 50px; margin-right: 50px;">
     En este caso elegimos el set correspondiente a la Ciudad de Buenos Aires,
     Argentina nombrado <a href="https://data.insideairbnb.com/argentina/ciudad-aut%C3%B3noma-de-buenos-aires/buenos-aires/2024-11-29/data/listings.csv.gz">	listings.csv.gz</a>
 .Este conjunto de datos extraído en el mes de Diciembre del 2024 contiene, entre otros, datos sobre:</u></p>
-  <p style= "font-family: calibri, sans-serif; margin-left: 50px; margin-right: 50px;"> 
+  <p style= "font-family: calibri, sans-serif;font-size: 20px; margin-left: 50px; margin-right: 50px;"> 
 <u>Propiedades y sus características:</u> (barrio, comodidades, baños, geolocalización, tipo de propiedad, precio, etc)
     
     
-<p style= "font-family: calibri, sans-serif; margin-left: 50px; margin-right: 50px;"> 
+<p style= "font-family: calibri, sans-serif;font-size: 20px; margin-left: 50px; margin-right: 50px;"> 
 
 <u>Propietarios:</u> (nombre, ubicación, tiempos de respuestas, tasa de aceptación, verificación, etc)
 
   
-<p style= "font-family: calibri, sans-serif; margin-left: 50px; margin-right: 50px;"> 
+<p style= "font-family: calibri, sans-serif;font-size: 20px; margin-left: 50px; margin-right: 50px;"> 
   
   <u>Reseñas del usuario:</u> (sobre exactitud de la publicación, check in, limpieza, ubicación, etc)
 estadías (disponibilidad, mínimos y máximos aceptados, etc)
@@ -62,40 +64,41 @@ estadías (disponibilidad, mínimos y máximos aceptados, etc)
 
 
 
-<p style= "font-family: calibri, sans-serif; margin-left: 50px; margin-right: 50px;"> 
+<p style= "font-family: calibri, sans-serif;font-size: 20px; margin-left: 50px; margin-right: 50px;"> 
 Además de esto, creamos dos nuevas medidas con el fin de estimar en base a las reseñas, los precios y las noches de reserva
   la cantidad mínima de noches alquiladas en los últimos 12 meses y su posible estimación de facturación.
 
- <p style= "font-family: calibri, sans-serif; margin-left: 50px; margin-right: 50px;"> 
+ <p style= "font-family: calibri, sans-serif;font-size: 20px; margin-left: 50px; margin-right: 50px;"> 
 
    <b><u>Min Noches al año:</u></b> que se calculó como [minimum_nights]*[number_of_reviews_ltm]
-   <p style= "font-family: calibri, sans-serif; margin-left: 50px; margin-right: 50px;"> 
+   <p style= "font-family: calibri, sans-serif;font-size: 20px; margin-left: 50px; margin-right: 50px;"> 
 
 Es decir, la cantidad de noches mínimas permitidas por el host, multiplicadas por la cantidad de reseñas de los últimos 12 meses.
-<p style= "font-family: calibri, sans-serif; margin-left: 50px; margin-right: 50px;"> 
+<p style= "font-family: calibri, sans-serif;font-size: 20px; margin-left: 50px; margin-right: 50px;"> 
 
      <b><u>Facturación mínima estimada (USD):</u></b> que se calculó como
 ([minimum_nights]*[price]*[number_of_reviews_ltm])/1042.5 )
   
-<p style= "font-family: calibri, sans-serif; margin-left: 50px; margin-right: 50px;"> 
+<p style= "font-family: calibri, sans-serif; font-size: 20px;margin-left: 50px; margin-right: 50px;"> 
 Es decir, Min Noches al año mulitplicado por el precio en pesos argentinos dividido el valor del dólar oficial al 15/12/2024
 
   
-<p style= "font-family: calibri, sans-serif; margin-left: 50px; margin-right: 50px;"> 
+<p style= "font-family: calibri, sans-serif; font-size: 20px;margin-left: 50px; margin-right: 50px;"> 
     Por último, como parte del análisis exploratorio de datos se descartaron registros con las siguientes características:
-<p style= "font-family: calibri, sans-serif; margin-left: 50px; margin-right: 50px;"> 
+<p style= "font-family: calibri, sans-serif; font-size: 20px;margin-left: 50px; margin-right: 50px;"> 
 
-  1-	Registros cuyo Price es menor a <b>5.000$ o mayor a 110.000$</b>
+  <b>1-</b>	Registros cuyo Price es menor a <b>5.000$ o mayor a 110.000$</b>
   
-<p style= "font-family: calibri, sans-serif; margin-left: 50px; margin-right: 50px;"> 
+<p style= "font-family: calibri, sans-serif; font-size: 20px;margin-left: 50px; margin-right: 50px;"> 
 
-2-	Registros cuya cantidad de noches al año sea mayor a <b>365 ver bien aca!!!</b>
+<b>2-</b>	Registros cuya cantidad de noches al año sea mayor a <b>365 ver bien aca!!!</b>
     
-<p style= "font-family: calibri, sans-serif; margin-left: 50px; margin-right: 50px;"> 
+<p style= "font-family: calibri, sans-serif; font-size: 20px;margin-left: 50px; margin-right: 50px;"> 
 
 Con lo cual la cantidad de registros de nuestro conjunto totalizó los <b>29.046</b>
 
 </p>
+   
    
     
        <h2 style="font-family: Times new roman, sans-serif; margin-left: 10px; margin-top: 35px;"><u>Análisis Exploratorio de datos y Resultados:</u></h2>
